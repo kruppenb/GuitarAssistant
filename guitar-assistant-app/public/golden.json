@@ -1,0 +1,798 @@
+{
+  "id": "golden-tab",
+  "title": "Golden",
+  "artist": "KPop Demon Hunters",
+  "tuning": {
+    "strings": ["E", "A", "D", "G", "B", "E"]
+  },
+  "tempo": 120,
+  "timeSignature": "4/4",
+  "sections": [
+    {
+      "id": "section-intro",
+      "name": "Intro",
+      "startMeasure": 0,
+      "endMeasure": 9
+    }
+  ],
+  "measures": [
+    {
+      "number": 1,
+      "chord": "C",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 2,
+      "chord": "G",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 3,
+      "chord": "D",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 4,
+      "chord": "Em",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 5,
+      "chord": "C",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 6,
+      "chord": "G",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 7,
+      "chord": "D",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 8,
+      "chord": "D",
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 9,
+      "chord": "C",
+      "notes": [
+        {"string": 5, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.0, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.5, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.75, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.0, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.5, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 10,
+      "chord": "G",
+      "notes": [
+        {"string": 6, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.75, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.5, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.75, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.5, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 11,
+      "chord": "D",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 12,
+      "chord": "Em",
+      "notes": [
+        {"string": 6, "fret": 0, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.75, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.5, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.75, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 2.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 2.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 2.5, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 2.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 13,
+      "chord": "D",
+      "notes": [
+        {"string": 5, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.0, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.5, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.75, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.0, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.5, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 14,
+      "chord": "Em",
+      "notes": [
+        {"string": 6, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.75, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.5, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.75, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.5, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 15,
+      "chord": "D",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 16,
+      "chord": "Em",
+      "notes": [
+        {"string": 6, "fret": 0, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.75, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.5, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.75, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 2.0, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 17,
+      "chord": "C",
+      "notes": [
+        {"string": 5, "fret": 3, "startTime": 0.00, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.50, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.75, "duration": 0.25},
+
+        {"string": 5, "fret": 3, "startTime": 1.50, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.75, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.00, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 2.25, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 2.25, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 18,
+      "chord": "C",
+      "notes": [
+        {"string": 6, "fret": 3, "startTime": 0.00, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.50, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+
+        {"string": 6, "fret": 3, "startTime": 1.50, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.75, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.00, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.25, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 19,
+      "chord": "D",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.00, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.50, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 7, "startTime": 0.75, "duration": 0.25},
+
+        {"string": 5, "fret": 5, "startTime": 1.50, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.00, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.25, "duration": 0.25},
+        {"string": 4, "fret": 7, "startTime": 2.25, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 20,
+      "chord": "Em",
+      "notes": [
+        {"string": 6, "fret": 0, "startTime": 0.00, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.50, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.75, "duration": 0.25},
+
+        {"string": 6, "fret": 0, "startTime": 1.50, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 1.75, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 2.00, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 2.25, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 2.25, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 21,
+      "chord": "C",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 22,
+      "chord": "G",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 23,
+      "chord": "D",
+      "notes": [],
+      "techniques": ["P.M.", "strum"],
+      "duration": 4
+    },
+    {
+      "number": 24,
+      "chord": "Em",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 25,
+      "chord": "C",
+      "notes": [
+        {"string": 5, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.0, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.25, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.5, "duration": 0.25},
+        {"string": 5, "fret": 3, "startTime": 1.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 26,
+      "chord": "C",
+      "notes": [
+        {"string": 6, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.75, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.25, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.5, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 1.75, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 2.25, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 27,
+      "chord": "D",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 2.25, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 28,
+      "chord": "Em",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 1.25, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 29,
+      "chord": "C",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 30,
+      "chord": "G",
+      "notes": [
+        {"string": 5, "fret": 7, "startTime": 0.0, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.25, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.5, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 31,
+      "chord": "D",
+      "notes": [
+        {"string": 6, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 2, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 2, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 32,
+      "chord": "Em",
+      "notes": [
+        {"string": 6, "fret": 0, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 33,
+      "chord": "C",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 34,
+      "chord": "G",
+      "notes": [
+        {"string": 5, "fret": 7, "startTime": 0.0, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.25, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.5, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 35,
+      "chord": "D",
+      "notes": [
+        {"string": 6, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 2, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 2, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 36,
+      "chord": "Em",
+      "notes": [
+        {"string": 6, "fret": 0, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.25, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 37,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 38,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 39,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 40,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 41,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 42,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 43,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 44,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 45,
+      "notes": [],
+      "techniques": [],
+      "duration": 4
+    },
+    {
+      "number": 46,
+      "chord": "Em",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 47,
+      "chord": "D",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 48,
+      "chord": "D",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 49,
+      "chord": "C",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 50,
+      "chord": "Em",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 51,
+      "chord": "D",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 52,
+      "chord": "C",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 53,
+      "chord": "D",
+      "notes": [],
+      "techniques": ["strum"],
+      "duration": 4
+    },
+    {
+      "number": 54,
+      "chord": "C",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 55,
+      "chord": "G",
+      "notes": [
+        {"string": 5, "fret": 7, "startTime": 0.0, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.25, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.5, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 56,
+      "chord": "D",
+      "notes": [
+        {"string": 6, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 2, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 2, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 57,
+      "chord": "Em",
+      "notes": [
+        {"string": 6, "fret": 0, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 58,
+      "chord": "C",
+      "notes": [
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 3, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 59,
+      "chord": "G",
+      "notes": [
+        {"string": 5, "fret": 7, "startTime": 0.0, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.25, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.5, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 7, "startTime": 0.75, "duration": 0.25},
+        {"string": 4, "fret": 5, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 60,
+      "chord": "D",
+      "notes": [
+        {"string": 6, "fret": 3, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 3, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 2, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.5, "duration": 0.25},
+        {"string": 6, "fret": 2, "startTime": 0.75, "duration": 0.25},
+        {"string": 5, "fret": 5, "startTime": 0.75, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 61,
+      "chord": "Em",
+      "notes": [
+        {"string": 6, "fret": 0, "startTime": 0.0, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.0, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.25, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.25, "duration": 0.25},
+        {"string": 6, "fret": 0, "startTime": 0.5, "duration": 0.25},
+        {"string": 5, "fret": 2, "startTime": 0.5, "duration": 0.25}
+      ],
+      "techniques": ["P.M."],
+      "duration": 4
+    },
+    {
+      "number": 62,
+      "notes": [],
+      "duration": 4
+    },
+    {
+      "number": 63,
+      "notes": [],
+      "duration": 4
+    },
+    {
+      "number": 64,
+      "notes": [],
+      "duration": 4
+    },
+    {
+      "number": 65,
+      "notes": [],
+      "duration": 4
+    },
+    {
+      "number": 66,
+      "notes": [],
+      "duration": 4
+    },
+    {
+      "number": 67,
+      "notes": [],
+      "duration": 4
+    },
+    {
+      "number": 68,
+      "notes": [],
+      "duration": 4
+    }
+  ]
+}

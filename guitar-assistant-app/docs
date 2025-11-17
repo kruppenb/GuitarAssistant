@@ -1,0 +1,446 @@
+# Guitar Assistant - Design Document
+
+## Project Overview
+Guitar Assistant is a local desktop application designed to help beginning guitar players learn songs from PDF guitar tabs. The app provides an enhanced visual experience with synchronized scrolling and finger position guidance to make learning easier and more intuitive.
+
+## Core Problem Statement
+Beginning guitar players often struggle with:
+- Following along with static PDF tabs while playing
+- Understanding where to place fingers on the fretboard
+- Keeping pace with the song
+- Manually scrolling through tabs mid-performance
+- Getting feedback on whether they're playing correctly
+
+## Target User
+- Beginning to intermediate guitar players
+- Users who have guitar tabs in PDF format
+- Players looking for visual learning aids
+- Musicians who want to practice at their own pace
+
+## Key Features
+
+### 1. PDF Import & Processing
+**Description**: Import and parse PDF files containing guitar tablature.
+
+**Requirements**:
+- Support for standard PDF formats
+- Extract tablature notation (6-line staff with numbers)
+- Parse chord diagrams and notation
+- Handle multi-page documents
+- Support for both scanned and digital PDFs
+
+**Technical Considerations**:
+- PDF parsing library (PyMuPDF, pdf.js, or PDFBox)
+- OCR capabilities for scanned tabs (Tesseract)
+- Music notation recognition
+
+### 2. Enhanced Visual Display - **HORIZONTAL SCROLLING** ✓
+
+**Description**: Traditional tablature view with horizontal auto-scroll, highlighting, and finger position indicators.
+
+**Features**:
+- Large, readable tablature display with horizontal scrolling
+- Current position highlighted with playhead indicator
+- Upcoming notes preview (3-5 measures ahead visible)
+- Finger position numbers overlaid on frets (1=index, 2=middle, 3=ring, 4=pinky)
+- Color-coded finger positions for clarity
+- Auto-scroll at adjustable speeds
+- Manual scroll override with mouse/keyboard
+- Smooth animation between positions
+
+**Fretboard Reference Panel**:
+- Companion fretboard diagram below tabs (not hybrid overlay)
+- Shows current chord/note finger positions
+- Clear finger numbering (1-4)
+- Updates in real-time as tab scrolls
+
+### 3. Interactive Fretboard Display
+
+**Description**: Real-time visual representation of where to place fingers.
+
+**Features**:
+- Full fretboard diagram (typically 12-15 frets visible)
+- Highlighted dots showing finger positions
+- Color coding:
+  - Index finger (e.g., blue)
+  - Middle finger (e.g., green)
+  - Ring finger (e.g., yellow)
+  - Pinky (e.g., red)
+- Fret numbers and string labels
+- Open string indicators
+- Muted string indicators (X)
+
+### 4. Playback Controls
+
+**Description**: Controls for navigating through the tab.
+
+**Features**:
+- Play/Pause
+- Speed adjustment (25%, 50%, 75%, 100%, 125%, 150%)
+- Loop section (mark start/end points)
+- Skip to measure/section
+- Metronome with adjustable tempo
+- Click track to help with timing
+
+### 5. Practice Mode
+
+**Description**: Features specifically for practice and learning.
+
+**Features**:
+- Section markers (intro, verse, chorus, solo, etc.)
+- Loop difficult sections infinitely
+- Gradual speed increase (start slow, auto-increase when ready)
+- Practice log/statistics
+- Difficulty rating per section
+- Notes/annotations on specific measures
+
+### 6. Audio Input Recognition (Future Feature)
+
+**Description**: Listen to guitar playing via microphone and provide feedback on accuracy.
+
+**Requirements**:
+- Microphone input capture
+- Pitch detection algorithm
+- String and fret identification from audio
+- Real-time comparison with expected notes
+- Visual feedback (correct/incorrect indicators)
+- Timing accuracy measurement
+
+**Technical Approaches**:
+- Web Audio API (for web version)
+- NAudio + pitch detection library (for desktop version)
+- Consider ML models for better accuracy (e.g., CREPE for pitch detection)
+
+**Note**: This is a Phase 3 feature, not required for MVP. No audio file playback needed.
+
+## User Interface Design
+
+### Main Window Layout
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Guitar Assistant                                   [ _ □ X ]│
+├─────────────────────────────────────────────────────────────┤
+│  File  Edit  View  Practice  Help                            │
+├─────────────────────────────────────────────────────────────┤
+│  📄 Open PDF  |  🎵 Load Audio  |  ⚙️ Settings               │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  Current Song: [Song Name]                  BPM: [120]       │
+│  Section: [Intro]                                            │
+│                                                               │
+│  ┌─────────────────────────────────────────────────────┐    │
+│  │         TABLATURE VIEW (Scrolling)                   │    │
+│  │                                                       │    │
+│  │  E|─────────────────────────────────────────         │    │
+│  │  B|───────────────────3─5─7───────────────           │    │
+│  │  G|─────────────4─5─7───────────────────             │    │
+│  │  D|───5─7─────────────────────────────               │    │
+│  │  A|─────────────────────────────────────             │    │
+│  │  E|─────────────────────────────────────             │    │
+│  │         ▲ (current position indicator)                │    │
+│  └─────────────────────────────────────────────────────┘    │
+│                                                               │
+│  ┌─────────────────────────────────────────────────────┐    │
+│  │         FRETBOARD VIEW                               │    │
+│  │                                                       │    │
+│  │     Nut  1   2   3   4   5   6   7   8   9   10      │    │
+│  │  E  ─────●──────────────────────────────────         │    │
+│  │  B  ──────────○──────────────────────────            │    │
+│  │  G  ─────────────●───────────────────────            │    │
+│  │  D  ──────────────────●──────────────────            │    │
+│  │  A  ─────────────────────────────────────            │    │
+│  │  E  ─────────────────────────────────────            │    │
+│  │                                                       │    │
+│  │  ● = Press here    ○ = Open string    X = Mute       │    │
+│  └─────────────────────────────────────────────────────┘    │
+│                                                               │
+│  ┌─────────────────────────────────────────────────────┐    │
+│  │  ◀◀  ▶️/⏸️  ▶▶     [====●==========]  🔁 Loop          │    │
+│  │                   Position Slider                     │    │
+│  │  Speed: [====●====] 75%     🔄 Section: [Verse 1] ▼   │    │
+│  └─────────────────────────────────────────────────────┘    │
+│                                                               │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Settings Panel
+
+- Display preferences (font size, colors, theme)
+- Fretboard orientation (left/right handed)
+- Auto-scroll speed defaults
+- Keyboard shortcuts
+- Default loop settings
+
+## Technical Architecture
+
+### Technology Stack Options - **USER PREFERENCES: TypeScript or C#** ✓
+
+#### Option 1: TypeScript Web App (RECOMMENDED)
+**Pros**:
+- Modern, responsive UI with React/Vue/Svelte
+- Works offline as PWA (Progressive Web App)
+- Cross-platform (Windows, Mac, Linux, mobile browsers)
+- Rich ecosystem for UI components
+- Good PDF.js support for parsing
+- Web Audio API for future microphone input
+- Easy to iterate and test
+- No installation required
+
+**Cons**:
+- PDF parsing slightly more complex than desktop
+- Browser security restrictions on file access
+
+**Recommended Stack**:
+- **Language**: TypeScript
+- **Framework**: React or Svelte (lightweight, fast)
+- **Build Tool**: Vite (fast dev server, HMR)
+- **PDF Processing**: PDF.js + custom tab parser
+- **Graphics**: HTML Canvas or SVG for rendering
+- **Styling**: Tailwind CSS or styled-components
+- **Audio Input**: Web Audio API (Phase 3)
+- **State Management**: Zustand or Redux Toolkit
+- **PWA**: Workbox for offline capabilities
+
+#### Option 2: C# Desktop App (Alternative)
+**Pros**:
+- Native Windows performance
+- Excellent PDF libraries (PdfSharp, iTextSharp)
+- Strong typing and tooling
+- NAudio for microphone input
+- Professional-looking apps with WPF/Avalonia
+
+**Cons**:
+- Windows-focused (unless using Avalonia)
+- Longer build times
+- Distribution requires installer
+
+**Recommended Stack**:
+- **Language**: C# 12
+- **Framework**: Avalonia UI (cross-platform) or WPF (Windows-only)
+- **PDF Processing**: PdfSharp or iTextSharp
+- **Graphics**: Skia (SkiaSharp) for rendering
+- **Audio Input**: NAudio (Phase 3)
+- **Build**: dotnet publish, ClickOnce installer
+
+#### Option 3: Hybrid - Electron with TypeScript
+**Pros**:
+- Desktop app with web technologies
+- Node.js backend for PDF processing
+- Can use Python libraries via child processes if needed
+- Better file system access than pure web
+
+**Cons**:
+- Larger bundle size (~150MB+)
+- Higher memory usage
+
+**Stack**:
+- Electron + React + TypeScript
+- PDF.js or pdf-lib
+- Web Audio API
+
+### Recommended Choice
+**TypeScript Web App (React + Vite)** for MVP:
+- Best balance of development speed and capability
+- Works offline as PWA
+- Modern UI patterns
+- Easy to add Python backend later if needed for PDF parsing
+- Can always wrap in Electron later if desktop features needed
+
+## Data Flow
+
+```
+┌─────────────┐
+│  PDF File   │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────┐
+│  PDF Parser     │  Extract text, recognize tab format
+└──────┬──────────┘
+       │
+       ▼
+┌─────────────────┐
+│  Tab Parser     │  Convert to structured data
+└──────┬──────────┘       (measures, notes, timing)
+       │
+       ▼
+┌─────────────────┐
+│  Data Model     │  Store tab structure
+└──────┬──────────┘
+       │
+       ├──────────────────┬──────────────────┐
+       ▼                  ▼                  ▼
+┌─────────────┐   ┌──────────────┐   ┌─────────────┐
+│  Tab View   │   │  Fretboard   │   │  Playback   │
+│  Renderer   │   │  Renderer    │   │  Controller │
+└─────────────┘   └──────────────┘   └─────────────┘
+```
+
+## Data Models
+
+### Tab Structure
+```python
+class Tab:
+    - song_title: str
+    - artist: str
+    - tuning: Tuning (E standard, Drop D, etc.)
+    - tempo: int (BPM)
+    - time_signature: str (4/4, 3/4, etc.)
+    - measures: List[Measure]
+    - sections: List[Section]
+
+class Measure:
+    - number: int
+    - notes: List[Note]
+    - duration: float
+
+class Note:
+    - string: int (1-6)
+    - fret: int (0-24)
+    - duration: float
+    - technique: str (hammer-on, pull-off, bend, slide, etc.)
+    - timestamp: float
+
+class Section:
+    - name: str (Intro, Verse, Chorus, etc.)
+    - start_measure: int
+    - end_measure: int
+    - difficulty: int (1-5)
+
+class Tuning:
+    - strings: List[str] (E, A, D, G, B, E for standard)
+```
+
+## MVP Feature Set (Phase 1)
+
+**Must Have**:
+1. ✅ Import PDF guitar tabs
+2. ✅ Display tabs in readable format
+3. ✅ Manual scrolling with mouse/keyboard
+4. ✅ Basic fretboard visualization
+5. ✅ Highlight current position
+6. ✅ Adjustable scroll speed
+7. ✅ Play/pause functionality
+
+**Nice to Have** (can be added later):
+- Audio file synchronization
+- Practice statistics
+- Section looping
+- Speed ramping
+- Custom annotations
+- Export/save practice sessions
+
+## Development Phases
+
+### Phase 1: Core Functionality (MVP)
+**Duration**: 3-4 weeks
+- PDF upload and text extraction
+- Tab parser (handle format from sample PDF)
+- Horizontal scrolling tab display with Canvas/SVG
+- Finger position indicators on tab
+- Manual scroll controls (mouse, keyboard, touch)
+- Basic fretboard reference panel
+- Playhead position indicator
+- **Deliverable**: Can load PDF, view tabs, manually scroll
+
+### Phase 2: Auto-Scroll & Practice Features
+**Duration**: 3-4 weeks
+- Smooth auto-scrolling at variable speeds
+- Play/pause controls
+- BPM adjustment
+- Section markers (intro, verse, chorus, etc.)
+- Loop functionality for practice
+- Speed adjustment (25%-200%)
+- Keyboard shortcuts
+- **Deliverable**: Full practice mode with auto-scroll
+
+### Phase 3: Audio Input Recognition
+**Duration**: 5-6 weeks
+- Microphone input capture
+- Pitch detection (Web Audio API + ML model)
+- Note recognition and comparison
+- Visual feedback for correct/incorrect notes
+- Timing accuracy measurement
+- Practice statistics
+- **Deliverable**: Real-time playing feedback
+
+### Phase 4: Enhancement & Polish
+**Duration**: 2-3 weeks
+- Theme customization (dark/light mode)
+- Multiple tab format support
+- Tab library management
+- Export practice sessions
+- Performance optimization
+- PWA offline capabilities
+- **Deliverable**: Production-ready application
+
+## Challenges & Risks
+
+### Technical Challenges
+1. **PDF Parsing Accuracy**
+   - Challenge: Tabs vary widely in format
+   - Mitigation: Start with well-formatted digital PDFs, add format support incrementally
+   - Alternative: Manual correction interface
+
+2. **Real-time Performance**
+   - Challenge: Smooth scrolling and rendering
+   - Mitigation: Optimize rendering, consider hardware acceleration
+
+3. **Tab Recognition**
+   - Challenge: Converting PDF to structured data
+   - Mitigation: Use regex patterns, consider ML for complex cases
+
+### User Experience Challenges
+1. **Learning Curve**
+   - Risk: Too many features overwhelm beginners
+   - Mitigation: Simple default mode, progressive feature disclosure
+
+2. **PDF Compatibility**
+   - Risk: Not all PDF tabs are compatible
+   - Mitigation: Clear documentation of supported formats, conversion tools
+
+## Success Metrics
+
+- Successfully imports 80%+ of standard guitar tab PDFs
+- Smooth scrolling at various speeds without lag
+- Fretboard accurately shows finger positions
+- Users can learn a song section 30% faster than with static PDF
+- Application startup time < 3 seconds
+- Memory usage < 200MB for typical tab
+
+## Future Enhancements
+
+- **Mobile Version**: iOS/Android app with same core features
+- **Tab Library**: Built-in browser for legal tab sources
+- **Social Features**: Share practice progress, challenges
+- **Video Integration**: Sync with YouTube tutorials
+- **MIDI Support**: Connect to MIDI guitars for real-time feedback
+- **AI Coach**: Suggest exercises based on difficulty areas
+- **Backing Tracks**: Generate or load backing tracks
+- **Recording**: Record practice sessions for review
+- **Multi-instrument**: Support bass, ukulele, etc.
+
+## Questions for Refinement
+
+Please review and provide feedback on:
+
+1. **Visual Style**: Which visualization approach (scrolling, falling notes, hybrid) appeals most to you?
+
+2. **Technology**: Do you have programming experience? What languages are you comfortable with?
+
+3. **PDF Format**: Can you share an example PDF tab? This will help determine parsing complexity.
+
+4. **Priority Features**: Which features from the "Nice to Have" list are most important to you?
+
+5. **Platform**: Is Windows-only acceptable, or do you need cross-platform?
+
+6. **Audio**: How important is audio synchronization for your initial version?
+
+7. **Distribution**: Is this for personal use only, or would you want to share it with others?
+
+---
+
+**Document Version**: 1.0  
+**Last Updated**: November 16, 2025  
+**Status**: Draft - Awaiting Feedback
