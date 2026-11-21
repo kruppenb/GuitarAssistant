@@ -181,7 +181,7 @@ async function togglePlayback() {
     pending = false; get("play").disabled = false; controls();
   }
 }
-function apply(key, value) {
+function apply(key, value, editing = false) {
   clearError();
   const changed = settings[key] !== value;
   settings[key] = value;
@@ -190,8 +190,24 @@ function apply(key, value) {
     if (key === "beats" || key === "accent") buildLamps();
     if (voice) launchLoop(settings);
   }
-  controls();
+  if (!editing) controls();
   if (!voice) idleClock();
+}
+function bindNumber(id, min, max) {
+  const field = get(id);
+  field.addEventListener("input", () => {
+    if (field.value === "" || !field.validity.valid) return;
+    apply(id, Number(field.value), true);
+    if (id === "bpm") {
+      get("slider").value = settings.bpm;
+      get("slower").disabled = settings.bpm === min;
+      get("faster").disabled = settings.bpm === max;
+    }
+  });
+  field.addEventListener("blur", () => {
+    apply(id, integer(field.value, min, max, id === "bpm" ? settings.bpm : 0));
+  });
+  field.addEventListener("keydown", event => { if (event.key === "Enter") field.blur(); });
 }
 
 for (let n = 1; n <= 16; n++) get("meter").add(new Option(String(n), String(n)));
@@ -201,18 +217,15 @@ for (let i = -8; i <= 8; i++) {
   tick.style.setProperty("--angle", (i * 5) + "deg");
   get("scale").append(tick);
 }
-get("bpm").addEventListener("change", e => apply("bpm", integer(e.target.value, 20, 300, settings.bpm)));
-get("bpm").addEventListener("keydown", e => { if (e.key === "Enter") e.target.blur(); });
+bindNumber("bpm", 20, 300);
 get("slider").addEventListener("input", e => { get("bpm").value = e.target.value; });
 get("slider").addEventListener("change", e => apply("bpm", Number(e.target.value)));
 get("slower").addEventListener("click", () => apply("bpm", Math.max(20, settings.bpm - 1)));
 get("faster").addEventListener("click", () => apply("bpm", Math.min(300, settings.bpm + 1)));
 get("meter").addEventListener("change", e => apply("beats", Number(e.target.value)));
 for (const key of ["accent", "eighth", "timed"]) get(key).addEventListener("change", e => apply(key, e.target.checked));
-for (const [key, max] of [["minutes", 999], ["seconds", 59]]) {
-  get(key).addEventListener("change", e => apply(key, integer(e.target.value, 0, max, 0)));
-  get(key).addEventListener("keydown", e => { if (e.key === "Enter") e.target.blur(); });
-}
+bindNumber("minutes", 0, 999);
+bindNumber("seconds", 0, 59);
 get("play").addEventListener("click", togglePlayback);
 document.addEventListener("keydown", e => {
   if (e.code === "Space" && !e.repeat && !e.altKey && !e.ctrlKey && !e.metaKey &&
