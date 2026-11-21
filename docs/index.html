@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1d2e3a">
+  <meta name="description" content="A metronome for music practice, with an optional timer, first-beat accent and eighth-note clicks.">
+  <title>Practice Metronome</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./metronome.css">
+  <script defer src="./metronome.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Metronome</h1>
+      <span class="status" id="status" role="status">Ready</span>
+    </header>
+    <section class="instrument" aria-label="Tempo and playback">
+      <div class="readout">
+        <div class="dial" aria-hidden="true">
+          <div class="scale" id="scale"></div>
+          <div class="arm" id="arm"><i></i></div>
+          <div class="pivot"></div>
+        </div>
+        <div class="tempo">
+          <label for="bpm">Tempo <span> / BPM</span></label>
+          <div class="tempo-value">
+            <input id="bpm" type="number" inputmode="numeric" min="20" max="300" step="1" value="64" aria-label="Tempo in beats per minute">
+            <div class="nudge">
+              <button type="button" id="faster" aria-label="Increase tempo">+</button>
+              <button type="button" id="slower" aria-label="Decrease tempo">−</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tempo-track">
+        <span>20</span><input id="slider" aria-label="Tempo slider" type="range" min="20" max="300" value="64"><span>300</span>
+      </div>
+      <div class="transport">
+        <div class="beats" aria-hidden="true" id="lamps"></div>
+        <button class="play" id="play" type="button"><i aria-hidden="true"></i><span>Start</span></button>
+      </div>
+    </section>
+    <section class="controls" aria-label="Practice settings">
+      <div class="control-group">
+        <h2>Rhythm</h2>
+        <label class="control-row" for="meter"><span>Beats per bar</span><select id="meter"></select></label>
+        <label class="control-row switch"><span>Accent first beat</span><input type="checkbox" id="accent" checked></label>
+        <label class="control-row switch"><span>Click on the “and”</span><input type="checkbox" id="eighth"></label>
+      </div>
+      <div class="control-group timer">
+        <h2>Practice timer</h2>
+        <label class="control-row switch"><span>Stop after</span><input type="checkbox" id="timed"></label>
+        <div class="duration">
+          <label><input id="minutes" type="number" inputmode="numeric" min="0" max="999" value="2" aria-label="Timer minutes"> min</label>
+          <span aria-hidden="true">:</span>
+          <label><input id="seconds" type="number" inputmode="numeric" min="0" max="59" value="0" aria-label="Timer seconds"> sec</label>
+        </div>
+        <p class="timer-state" id="clock" role="timer" aria-live="off">Continuous</p>
+      </div>
+    </section>
+    <p id="error" role="alert" hidden></p>
+    <p class="shortcut"><kbd>Space</kbd> Start / stop</p>
+    <noscript>Enable JavaScript to play the metronome.</noscript>
+  </main>
+</body>
+</html>
