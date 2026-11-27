@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import type { Tab } from '../../models/Tab';
 import { TabRenderer } from '../../rendering/TabRenderer';
 import { ScrollController } from '../../playback/ScrollController';
+import { useScreenWakeLock } from '../../playback/useScreenWakeLock';
 
 interface TabViewerProps {
   tab: Tab;
@@ -18,6 +19,7 @@ export const TabViewer: React.FC<TabViewerProps> = ({ tab }) => {
   const [position, setPosition] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1.0);
+  const screenNotice = useScreenWakeLock(isPlaying);
   
   // Initialize renderer and controller
   useEffect(() => {
@@ -39,6 +41,7 @@ export const TabViewer: React.FC<TabViewerProps> = ({ tab }) => {
     // Create renderer and controller
     rendererRef.current = new TabRenderer(canvas);
     controllerRef.current = new ScrollController(tab.tempo, tab.timeSignature, tab.measures.length);
+    setIsPlaying(false);
     
     controllerRef.current.setPositionChangeCallback((pos) => {
       setPosition(pos);
@@ -65,8 +68,8 @@ export const TabViewer: React.FC<TabViewerProps> = ({ tab }) => {
       controllerRef.current.pause();
       setIsPlaying(false);
     } else {
-      controllerRef.current.play();
       setIsPlaying(true);
+      controllerRef.current.play();
     }
   };
   
@@ -122,6 +125,8 @@ export const TabViewer: React.FC<TabViewerProps> = ({ tab }) => {
           </div>
         </div>
         
+        {screenNotice && <p role="status">{screenNotice}</p>}
+
         <div className="position-control">
           <label>Position: Measure {Math.floor(position) + 1} / {tab.measures.length}</label>
           <input
