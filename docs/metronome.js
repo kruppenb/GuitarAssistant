@@ -58,6 +58,38 @@ function createBar(context, config) {
 let audio, voice, pending = false, frame = 0, lastBeat = -1;
 let deadline = Infinity, timerEnd = Infinity, sessionStart = 0, lastClock = "";
 const prefersStill = window.matchMedia("(prefers-reduced-motion: reduce)");
+let screenLock = null, wakeRequest = 0;
+
+function releaseScreen() {
+  wakeRequest++;
+  if (screenLock) {
+    screenLock.onrelease = null;
+    void screenLock.release();
+    screenLock = null;
+  }
+  get("sleep-notice").hidden = true;
+}
+async function keepScreenAwake() {
+  if (!voice || document.hidden) return;
+  const request = ++wakeRequest;
+  if (!navigator.wakeLock) {
+    get("sleep-notice").hidden = false;
+    return;
+  }
+  try {
+    const lock = await navigator.wakeLock.request("screen");
+    // Stop or a visibility change may have ended this request's session.
+    if (request !== wakeRequest) {
+      await lock.release();
+      return;
+    }
+    screenLock = lock;
+    lock.onrelease = () => { get("sleep-notice").hidden = false; };
+    get("sleep-notice").hidden = !lock.released;
+  } catch {
+    if (request === wakeRequest) get("sleep-notice").hidden = false;
+  }
+}
 const runLength = () => settings.minutes * 60 + settings.seconds;
 function formatTime(seconds) {
   return Math.floor(seconds / 60) + ":" + String(seconds % 60).padStart(2, "0");
@@ -104,6 +136,7 @@ function retire(source) {
   source.disconnect();
 }
 function stopPlayback(finished = false) {
+  releaseScreen();
   cancelAnimationFrame(frame);
   if (voice) retire(voice.source);
   voice = null;
@@ -170,6 +203,7 @@ async function togglePlayback() {
     deadline = settings.timed ? audio.currentTime + runLength() : Infinity;
     timerEnd = settings.timed ? sessionStart + runLength() * 1000 : Infinity;
     launchLoop(settings);
+    void keepScreenAwake();
     document.body.classList.add("playing");
     get("play").querySelector("span").textContent = "Stop";
     get("status").textContent = "Playing";
@@ -235,6 +269,8 @@ document.addEventListener("keydown", e => {
 });
 window.addEventListener("pagehide", () => { if (voice) stopPlayback(); });
 document.addEventListener("visibilitychange", () => {
-  if (!document.hidden && voice && performance.now() >= timerEnd) stopPlayback(true);
+  if (document.hidden) releaseScreen();
+  else if (voice && performance.now() >= timerEnd) stopPlayback(true);
+  else if (voice) void keepScreenAwake();
 });
 controls(); buildLamps(); idleClock();
